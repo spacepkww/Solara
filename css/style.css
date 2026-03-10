@@ -2215,38 +2215,43 @@ html, body {
         display: block !important;
     }
 
-     /* 搜索源弹窗 - 纯白背景 */
-    .source-menu {
-        background: #ffffff !important;  /* 纯白背景 */
-        border: 1px solid rgba(0, 0, 0, 0.08) !important;  /* 极细边框，可选 */
+     /* 提高选择器特异性 */
+    body .source-menu,
+    html body .source-menu {
+        background: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.08) !important;
     }
     
-    /* 弹窗内选项文字 - 深灰色 */
-    .source-option {
+    body .source-option,
+    html body .source-option {
         color: #333333 !important;
     }
     
-    /* 悬停/选中状态 - 淡绿色背景 + 深色文字或保持绿色 */
-    .source-option:hover,
-    .source-option.active {
-        background: rgba(26, 188, 156, 0.1) !important;  /* 淡绿色背景 */
-        color: #1abc9c !important;  /* 品牌色文字 */
+    body .source-option:hover,
+    body .source-option.active,
+    html body .source-option:hover,
+    html body .source-option.active {
+        background: rgba(26, 188, 156, 0.1) !important;
+        color: #1abc9c !important;
     }
     
-    /* 暗色模式下也强制浅色背景 */
-    .dark-mode .source-menu {
+    /* 暗色模式 */
+    body.dark-mode .source-menu,
+    html.dark-mode body .source-menu {
         background: #ffffff !important;
         border-color: rgba(0, 0, 0, 0.08) !important;
     }
     
-    .dark-mode .source-option {
+    body.dark-mode .source-option,
+    html.dark-mode body .source-option {
         color: #333333 !important;
     }
     
-    .dark-mode .source-option:hover,
-    .dark-mode .source-option.active {
+    body.dark-mode .source-option:hover,
+    body.dark-mode .source-option.active,
+    html.dark-mode body .source-option:hover,
+    html.dark-mode body .source-option.active {
         background: rgba(26, 188, 156, 0.1) !important;
         color: #1abc9c !important;
     }
-
 }
