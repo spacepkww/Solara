@@ -2215,22 +2215,61 @@ html, body {
         display: block !important;
     }
 
-    /* 搜索区域背景色改为浅色 */
+    /* 搜索区域 - 移除边框和圆角 */
     .search-area {
-        background: rgba(255, 255, 255, 0.95) !important;  /* 浅色背景 */
+        background: rgba(255, 255, 255, 0.95) !important;
         backdrop-filter: blur(10px) !important;
         -webkit-backdrop-filter: blur(10px) !important;
+        border: none !important;
+        border-radius: 0 !important;
     }
     
-    /* 搜索输入框背景色 */
+    /* 搜索输入框 - 黑色字体，无圆角 */
     .search-input {
-        background: rgba(255, 255, 255, 0.9) !important;
-        color: #333333 !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #e0e0e0 !important;
+        border-radius: 0 !important;
+        font-weight: 500 !important;
     }
     
-    /* 搜索按钮保持品牌色 */
+    .search-input::placeholder {
+        color: #999999 !important;
+    }
+    
+    /* 下拉选择按钮 - 黑色字体，无圆角 */
+    .source-select-btn {
+        color: #000000 !important;
+        border: 1px solid #e0e0e0 !important;
+        border-radius: 0 !important;
+        background: #ffffff !important;
+        font-weight: 500 !important;
+    }
+    
+    .source-select-btn .caret-icon {
+        color: #000000 !important;
+    }
+    
+    /* 搜索按钮 - 黑色字体，无圆角 */
     .search-btn {
-        background: #1abc9c !important;
-        color: white !important;
+        color: #000000 !important;
+        background: #f0f0f0 !important;
+        border: 1px solid #e0e0e0 !important;
+        border-radius: 0 !important;
+        font-weight: 500 !important;
+    }
+    
+    .search-btn i {
+        color: #000000 !important;
+    }
+    
+    .search-btn:hover {
+        background: #e0e0e0 !important;
+    }
+    
+    .search-btn:disabled {
+        color: #999999 !important;
+        background: #f5f5f5 !important;
+        border-color: #e0e0e0 !important;
     }
 }
