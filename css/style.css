@@ -2223,5 +2223,12 @@ html, body {
         border-radius: 0 !important;
     }
 
+    .container.search-mode .search-area {
+    background: var(--component-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 0px solid var(--primary-color);
+}
+
 
 }
