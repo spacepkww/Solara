@@ -2215,43 +2215,53 @@ html, body {
         display: block !important;
     }
 
-     /* 提高选择器特异性 */
-    body .source-menu,
-    html body .source-menu {
+   /* 搜索源选择弹窗 */
+    .source-menu {
         background: #ffffff !important;
-        border: 1px solid rgba(0, 0, 0, 0.08) !important;
+        border: none !important;
     }
     
-    body .source-option,
-    html body .source-option {
+    .source-option {
         color: #333333 !important;
     }
     
-    body .source-option:hover,
-    body .source-option.active,
-    html body .source-option:hover,
-    html body .source-option.active {
-        background: rgba(26, 188, 156, 0.1) !important;
+    .source-option:hover,
+    .source-option.active {
+        background: #f0f0f0 !important;
         color: #1abc9c !important;
     }
     
-    /* 暗色模式 */
-    body.dark-mode .source-menu,
-    html.dark-mode body .source-menu {
+    /* 导入下拉菜单 */
+    .import-dropdown-menu {
         background: #ffffff !important;
-        border-color: rgba(0, 0, 0, 0.08) !important;
+        border: none !important;
     }
     
-    body.dark-mode .source-option,
-    html.dark-mode body .source-option {
+    .import-dropdown-item {
         color: #333333 !important;
     }
     
-    body.dark-mode .source-option:hover,
-    body.dark-mode .source-option.active,
-    html.dark-mode body .source-option:hover,
-    html.dark-mode body .source-option.active {
-        background: rgba(26, 188, 156, 0.1) !important;
+    .import-dropdown-item:hover {
+        background: #f0f0f0 !important;
+        color: #1abc9c !important;
+    }
+    
+    /* 移除暗色模式的影响 */
+    .dark-mode .source-menu,
+    .dark-mode .import-dropdown-menu {
+        background: #ffffff !important;
+        border: none !important;
+    }
+    
+    .dark-mode .source-option,
+    .dark-mode .import-dropdown-item {
+        color: #333333 !important;
+    }
+    
+    .dark-mode .source-option:hover,
+    .dark-mode .source-option.active,
+    .dark-mode .import-dropdown-item:hover {
+        background: #f0f0f0 !important;
         color: #1abc9c !important;
     }
 }
