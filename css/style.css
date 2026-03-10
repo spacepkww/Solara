@@ -2216,18 +2216,12 @@ html, body {
     }
 
     .search-area {
-    grid-area: search;
-    background: transparent !important;
-    border-radius: 16px;
-    padding: 20px;
-    border: 1px solid var(--border-color);
-    position: relative;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 10;
-    overflow: visible;
-    display: flex;
-    flex-direction: column;
-}
+        background: transparent !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border: none !important;
+        border-radius: 0 !important;
+    }
 
 
 }
