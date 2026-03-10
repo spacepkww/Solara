@@ -2177,3 +2177,51 @@ html, body {
 .background-stage {
     display: none;
 }
+
+/* ============================= */
+/* Mobile WebView (MAUI / iOS)  */
+/* ============================= */
+@media (max-width: 768px) {
+
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        min-height: 100vh;
+    }
+
+    /* 去掉背景渐变层 */
+    .background-stage {
+        display: none !important;
+    }
+
+    /* 透明容器 */
+    .container {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        background: transparent !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* 去掉组件背景 */
+    :root {
+        --container-bg: transparent;
+        --component-bg: transparent;
+    }
+
+    /* 手机全宽 */
+    .player-wrapper {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+
+    /* 防止四周留空 */
+    body {
+        display: block !important;
+    }
+
+}
