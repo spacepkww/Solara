@@ -2190,12 +2190,10 @@ html, body {
         min-height: 100vh;
     }
 
-    /* 去掉背景渐变层 */
     .background-stage {
         display: none !important;
     }
 
-    /* 透明容器 */
     .container {
         width: 100% !important;
         margin: 0 !important;
@@ -2206,20 +2204,18 @@ html, body {
         border: none !important;
     }
 
-    /* 去掉组件背景 */
     :root {
         --container-bg: transparent;
         --component-bg: transparent;
     }
 
-    /* 手机全宽 */
     .player-wrapper {
         width: 100% !important;
         height: auto !important;
         max-height: none !important;
+        background: transparent !important;   /* ★关键 */
     }
 
-    /* 防止四周留空 */
     body {
         display: block !important;
     }
