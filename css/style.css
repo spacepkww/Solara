@@ -2169,3 +2169,11 @@ input[type="range"]:active::-moz-range-thumb {
     width: 100%;
     max-width: 220px;
 }
+
+html, body {
+    background: transparent !important;
+}
+
+.background-stage {
+    display: none;
+}
