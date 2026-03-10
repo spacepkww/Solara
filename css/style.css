@@ -2183,36 +2183,242 @@ html, body {
 /* ============================= */
 @media (max-width: 768px) {
 
-    html, body {
-        margin: 0 !important;
-        padding: 0 !important;
-        background: transparent !important;
-        min-height: 100vh;
+    /* ... 现有样式 ... */
+
+    /* 全局移动端文字颜色 - 强制所有文字为深色 */
+    body, 
+    .container,
+    .header h1,
+    .header .warning,
+    .search-input,
+    .source-select-btn,
+    .search-result-title,
+    .search-result-artist,
+    .current-song-title,
+    .current-song-artist,
+    .playlist-item,
+    .lyrics-content > div,
+    .progress-container span,
+    .transport-controls button,
+    .audio-tools button,
+    .playlist-tab,
+    .source-option,
+    .quality-option,
+    .notification,
+    .player-quality-option,
+    .import-dropdown-item,
+    .source-menu,
+    .source-option,
+    .quality-menu,
+    .player-quality-menu,
+    .dynamic-quality-menu,
+    .playlist,
+    .lyrics,
+    .cover-area,
+    .search-area,
+    .source-select-wrapper *,
+    .source-select-btn,
+    .source-menu *,
+    .import-dropdown-menu *,
+    .player-quality-menu *,
+    .quality-menu *,
+    .playlist-header *,
+    .playlist-actions-tray *,
+    .playlist-action-btn,
+    .mobile-panel * {
+        color: #222222 !important; /* 深灰色/黑色文字 */
     }
 
-    .background-stage {
-        display: none !important;
+    /* 特别强调标题为纯黑色 */
+    .header h1,
+    .search-result-title,
+    .current-song-title,
+    .playlist-item.current,
+    .playlist-tab.active,
+    .source-option.active,
+    .quality-option.active,
+    .player-quality-option.active {
+        color: #000000 !important;
+        font-weight: 600;
     }
 
-    .container {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 10px !important;
-        background: transparent !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
+    /* 次要文字保持灰色层次 */
+    .header .warning,
+    .search-result-artist,
+    .current-song-artist,
+    .progress-container span,
+    .source-option small,
+    .quality-option small {
+        color: #555555 !important;
+    }
+
+    /* ===== 背景色调整 - 所有弹窗和面板为浅色 ===== */
+    
+    /* 主要容器背景 - 浅色半透明或纯白 */
+    .container,
+    .playlist,
+    .lyrics,
+    .cover-area,
+    .search-area,
+    .source-menu,
+    .quality-menu,
+    .player-quality-menu,
+    .dynamic-quality-menu,
+    .import-dropdown-menu {
+        background: rgba(255, 255, 255, 0.98) !important; /* 几乎纯白的半透明 */
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+    }
+
+    /* 确保所有弹窗背景完全不透明或高不透明 */
+    .source-menu,
+    .quality-menu,
+    .player-quality-menu,
+    .dynamic-quality-menu,
+    .import-dropdown-menu {
+        background: #ffffff !important; /* 纯白背景，确保可读性 */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important; /* 轻微阴影代替边框 */
+    }
+
+    /* 搜索区域和播放列表内部组件背景 */
+    .search-result-item,
+    .playlist-item,
+    .source-option,
+    .quality-option,
+    .player-quality-option,
+    .import-dropdown-item {
+        background: rgba(255, 255, 255, 0.9) !important;
+        border: none !important; /* 移除边框 */
+    }
+
+    /* 选中项高亮使用浅色背景和深色文字 */
+    .search-result-item.selected,
+    .playlist-item.current,
+    .source-option.active,
+    .quality-option.active,
+    .player-quality-option.active,
+    .import-dropdown-item:hover {
+        background: rgba(26, 188, 156, 0.15) !important; /* 浅绿色背景 */
+        color: #000000 !important;
+    }
+
+    /* ===== 移除所有边框 ===== */
+    .container,
+    .playlist,
+    .lyrics,
+    .cover-area,
+    .search-area,
+    .source-select-btn,
+    .source-menu,
+    .quality-menu,
+    .player-quality-menu,
+    .dynamic-quality-menu,
+    .import-dropdown-menu,
+    .search-result-item,
+    .playlist-item,
+    .source-option,
+    .quality-option,
+    .player-quality-option,
+    .import-dropdown-item,
+    .playlist-header,
+    .playlist-actions-tray,
+    .playlist-action-btn,
+    .mobile-panel-header,
+    .playlist-tab,
+    .search-input,
+    .transport-controls button,
+    .audio-tools button,
+    .volume-container input[type="range"] {
+        border: none !important;
+        outline: none !important;
+    }
+
+    /* 输入框特殊处理 - 保留轻微底部边框或背景区分 */
+    .search-input {
+        background: rgba(0, 0, 0, 0.05) !important;
+        border-radius: 12px !important;
+        padding: 14px 16px !important;
+    }
+
+    /* 按钮样式调整 - 浅色背景深色文字 */
+    .transport-controls button,
+    .audio-tools button,
+    .playlist-action-btn,
+    .source-select-btn,
+    .playlist-tab,
+    .theme-toggle-button {
+        background: rgba(255, 255, 255, 0.95) !important;
+        color: #222222 !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important; /* 轻微阴影代替边框 */
+    }
+
+    /* 主要操作按钮保持品牌色但深色文字 */
+    #playPauseBtn,
+    #loadOnlineBtn,
+    .search-btn,
+    .import-selected-btn {
+        background: #1abc9c !important; /* 保留品牌色 */
+        color: #ffffff !important; /* 但文字保持白色以保证可读性 */
         border: none !important;
     }
 
-    .player-wrapper {
-        width: 100% !important;
-        height: auto !important;
-        max-height: none !important;
-        background: transparent !important;
+    /* 次要操作按钮 - 如收藏、下载等 */
+    .search-result-actions .action-btn,
+    .playlist-item-favorite,
+    .playlist-item-download,
+    .playlist-item-remove,
+    .favorite-item-action {
+        background: rgba(255, 255, 255, 0.98) !important;
+        color: #222222 !important;
+        border: none !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
     }
 
-    body {
-        display: block !important;
+    /* 收藏按钮特殊颜色保留 */
+    .playlist-item-favorite,
+    .favorite-item-action--remove {
+        background: #ff4d67 !important;
+        color: #ffffff !important;
     }
 
+    .playlist-item-download,
+    .favorite-item-action--download {
+        background: #2ecc71 !important;
+        color: #ffffff !important;
+    }
+
+    /* 进度条和音量条样式 */
+    .progress-container input[type="range"],
+    .volume-container input[type="range"] {
+        background: rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .progress-container input[type="range"]::-webkit-slider-thumb,
+    .volume-container input[type="range"]::-webkit-slider-thumb {
+        background: #1abc9c !important;
+        border: none !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    /* 暗色模式覆盖 - 如果您希望暗色模式在移动端也生效，可能需要调整 */
+    .dark-mode body,
+    .dark-mode .container,
+    .dark-mode .playlist,
+    .dark-mode .lyrics,
+    .dark-mode .cover-area,
+    .dark-mode .search-area,
+    .dark-mode .source-menu,
+    .dark-mode .quality-menu,
+    .dark-mode .player-quality-menu,
+    .dark-mode .dynamic-quality-menu,
+    .dark-mode .import-dropdown-menu {
+        background: #ffffff !important; /* 强制白色背景，忽略暗色模式 */
+        color: #222222 !important;
+    }
+
+    /* 如果需要完全禁用移动端的暗色模式，可以添加： */
+    .dark-mode {
+        --bg-gradient: none !important;
+        background: #ffffff !important;
+    }
 }
