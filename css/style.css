@@ -2204,16 +2204,11 @@ html, body {
         border: none !important;
     }
 
-    :root {
-        --container-bg: transparent;
-        --component-bg: transparent;
-    }
-
     .player-wrapper {
         width: 100% !important;
         height: auto !important;
         max-height: none !important;
-        background: transparent !important;   /* ★关键 */
+        background: transparent !important;
     }
 
     body {
